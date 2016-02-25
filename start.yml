@@ -1,0 +1,13 @@
+---
+- hosts: host
+  vars_files:
+  - ./vars/main.yml
+  tasks:
+  - include: tasks/env.yml
+  - include: tasks/install.yml
+  - include: tasks/conf.yml
+
+  environment:
+    http_proxy: "http://proxy.corproot.net:807"
+    https_proxy: "http://proxy.corproot.net:8087"
+    ftp_proxy: "http://proxy.corproot.net:8087"

@@ -1,0 +1,15 @@
+---
+  - name: copy .tmux.conf
+    copy: src=./src/.tmux.conf dest=~/ force=yes
+  - name: copy .zshrc
+    copy: src=./src/.zshrc dest=~/ force=yes
+  - name: change shell for user
+    user: name=root shell=/bin/zsh
+  - name: add gitconfig
+    template:
+      src: vimrc.j2
+      dest: ~/.vimrc
+  - name: change name
+    hostname: name={{ hostname }}
+  - name: enable docker 
+    service: name=docker state=started enabled=yes 

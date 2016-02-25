@@ -1,0 +1,8 @@
+---
+proxy: 'http://proxy.corproot.net:8079'
+
+name: 'perle'
+
+mail: 'kristjan.perlaska@gmail.com'
+
+hostname: 'nm'

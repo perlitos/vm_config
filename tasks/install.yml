@@ -1,0 +1,23 @@
+---
+  - name: update Packets
+    yum: name=* state=latest
+  - name: install epel
+    yum: name=epel-release state=present
+  - name: install package
+    yum: name={{item}} state=present
+    with_items:
+      - vim
+      - git
+      - htop
+      - tmux
+      - zsh
+      - docker-engine
+      - nmap
+      - sg3_utils
+  - name: install oh my zsh
+    git:
+      repo=https://github.com/robbyrussell/oh-my-zsh.git
+      dest=~/.oh-my-zsh
+      accept_hostkey=yes
+    environment:
+      http_proxy: http://proxy.corproot.net:8079 
