@@ -11,5 +11,5 @@
       dest: ~/.vimrc
   - name: change name
     hostname: name={{ hostname }}
-  - name: enable docker 
-    service: name=docker state=started enabled=yes 
+  - name: change shell
+    shell: chsh --shell /bin/zsh

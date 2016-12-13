@@ -11,8 +11,9 @@
       - htop
       - tmux
       - zsh
-      - docker-engine
       - nmap
+      - net-tools
+      - tcpdump 
       - sg3_utils
   - name: install oh my zsh
     git:
